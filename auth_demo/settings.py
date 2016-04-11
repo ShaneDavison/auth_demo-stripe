@@ -54,6 +54,10 @@ MIDDLEWARE_CLASSES = [
 
 ROOT_URLCONF = 'auth_demo.urls'
 
+AUTH_USER_MODEL = 'accounts.User'
+
+AUTHENTICATION_BACKENDS = ('accounts.backends.EmailAuth',)
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -122,3 +126,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE', 'pk_test_ez7wW1riG5ToChaWvruhSx0I')
+
+STRIPE_SECRET = os.getenv('STRIPE_SECRET', 'sk_test_eKDOcpG0z2NPf1udX26MR78K')
+
