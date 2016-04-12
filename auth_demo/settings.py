@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'hello',
     'accounts',
     'django_forms_bootstrap',
+    'paypal_store',
+    'paypal'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -136,3 +138,8 @@ STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE', 'pk_test_ez7wW1riG5ToChaWvr
 
 STRIPE_SECRET = os.getenv('STRIPE_SECRET', 'sk_test_eKDOcpG0z2NPf1udX26MR78K')
 
+SITE_URL = 'http://127.0.0.1:8000'
+
+PAYPAL_NOTIFY_URL = 'http://127.0.0.1/a-very-hard-to-guess-url/'
+
+PAYPAL_RECEIVER_EMAIL = 'shanodaviso@gmail.com'
