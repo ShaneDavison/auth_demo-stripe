@@ -24,9 +24,7 @@ class AccountUserManager(UserManager):
 
 
 class User(AbstractUser):
-    # now that we've abstracted this class we can add any
-    #       # number of custom attribute to our user class
-    #      # in later units we'll be adding things like payment details!
 
     stripe_id = models.CharField(max_length=40, default='')
+    subscription_end = models.DateTimeField(default=timezone.now)
     object = AccountUserManager()
