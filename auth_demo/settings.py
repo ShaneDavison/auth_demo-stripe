@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'paypal_store',
     'paypal',
     'product',
+    'paypal.standard.ipn',
+    'magazines',
 ]
 
 MIDDLEWARE_CLASSES = [

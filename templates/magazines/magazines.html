@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+    {% load magazine_extras %}
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Purchase</th>
+        </tr>
+        </thead>
+
+        <tbody>
+{#        {% for produc in product %}#}
+{#            <tr>#}
+{#                <td>{{ produc.name }}</td>#}
+{#                <td>{{ produc.description }}</td>#}
+{#                <td>{{ produc.price }}</td>#}
+{#                <td>{{ produc.paypal_form.sandbox }}</td>#}
+{#            </tr>#}
+{#        {% endfor %}#}
+
+        {% for magazine in magazines %}
+            <tr>
+                <td>{{ magazine.name }}</td>
+                <td>{{ magazine.description }}</td>
+                <td>{{ magazine.price }}</td>
+                <td>{% paypal_form_for magazine user %}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,7 +1,7 @@
 
 {% extends "base.html" %}
 {% block content %}
-{#    {% load magazine_extras %}#}
+    {% load magazine_extras %}
     <table class="table table-striped">
         <thead>
         <tr>
@@ -13,24 +13,23 @@
         </thead>
 
         <tbody>
-        {% for product in products %}
+        {% for produc in product %}
             <tr>
-                <td>{{ product.name }}</td>
-                <td>{{ product.description }}</td>
-                <td>{{ product.price }}</td>
-                <td>{{ product.paypal_form.sandbox }}</td>
+                <td>{{ produc.name }}</td>
+                <td>{{ produc.description }}</td>
+                <td>{{ produc.price }}</td>
+                <td>{{ produc.paypal_form.sandbox }}</td>
             </tr>
         {% endfor %}
 
-{##}
 {#        {% for magazine in magazines %}#}
 {#            <tr>#}
 {#                <td>{{ magazine.name }}</td>#}
 {#                <td>{{ magazine.description }}</td>#}
 {#                <td>{{ magazine.price }}</td>#}
-{#                <td>{%  %}</td>#}
+{#                <td>{% paypal_form_for magazine user %}</td>#}
 {#            </tr>#}
 {#        {% endfor %}#}
-{#        </tbody>#}
-{#    </table>#}
+        </tbody>
+    </table>
 {% endblock %}
