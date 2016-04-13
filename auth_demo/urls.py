@@ -6,6 +6,7 @@ from accounts import views as accounts_views
 from paypal.standard.ipn import urls as paypal_urls
 from paypal_store import views as paypal_views
 from product import views as product_views
+from magazines import views as magazine_views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -19,6 +20,8 @@ urlpatterns = [
     url(r'^a-very-hard-to-guess-url/', include(paypal_urls)),
     url(r'^paypal-return/$', paypal_views.paypal_return),
     url(r'^paypal-cancel/$', paypal_views.paypal_cancel),
-    url(r'^product/$', product_views.all_products)
+    url(r'^product/$', product_views.all_products),
+    url(r'^magazine/$', magazine_views.all_magazines)
+
     # url(r'^pages/', include('django.contrib.flatpages.urls')),
 ]

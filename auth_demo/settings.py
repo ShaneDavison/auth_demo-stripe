@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'accounts',
     'django_forms_bootstrap',
     'paypal_store',
-    'paypal',
     'product',
     'paypal.standard.ipn',
     'magazines',
@@ -146,4 +145,4 @@ SITE_URL = 'http://127.0.0.1:8000'
 
 PAYPAL_NOTIFY_URL = 'http://127.0.0.1/a-very-hard-to-guess-url/'
 
-PAYPAL_RECEIVER_EMAIL = 'shanodaviso@gmail.com'
+PAYPAL_RECEIVER_EMAIL = 'shanodaviso-facilitator@gmail.com'
