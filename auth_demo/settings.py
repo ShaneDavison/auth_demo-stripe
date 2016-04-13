@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'accounts',
     'django_forms_bootstrap',
     'paypal_store',
-    'paypal'
+    'paypal',
+    'product',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -59,7 +60,7 @@ ROOT_URLCONF = 'auth_demo.urls'
 
 AUTH_USER_MODEL = 'accounts.User'
 
-AUTHENTICATION_BACKENDS = ('accounts.backends.EmailAuth',)
+AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend', 'accounts.backends.EmailAuth',)
 
 TEMPLATES = [
     {
@@ -131,7 +132,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),)
+    os.path.join(BASE_DIR, "static"),
+)
 
 
 STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE', 'pk_test_ez7wW1riG5ToChaWvruhSx0I')
